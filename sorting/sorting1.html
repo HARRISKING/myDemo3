@@ -8,8 +8,29 @@
 </head>
 <body>
     <script>
-        let array = [2,34,2,3,5,256,7,4,23,2,34,213,12,4125,6];
-    
+        let array1 = [2,34,2,3,5,256,7,4,23,2,34,213,12,4125,6];
+        
+        function bubble(arr){
+            for (let n=0; n< arr.length-1; n++){
+                for(let m=0; m<arr.length-n-1;m++){
+                    if(arr[m]>arr[m+1]){
+                        conversion(arr,m,m+1)
+                    }
+                }
+
+            }
+            return arr;
+        }
+
+        function conversion(array,po1,po2){
+            let po = array[po1];
+            array[po1] = array[po2];
+            array[po2] = po;
+        }
+        
+        console.log(conversion(3,56));
+        console.log(bubble(array1));
+
     </script>
 </body>
 </html>

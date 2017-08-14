@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>快速排序算法</title>
+</head>
+<body>
+    <script>
+        // let array1 = [2,34,2,3,5,256,7,4,23,2,34,213,12,4125,6];
+        let array1 = [24,44,2,3,1,256];
+
+        function selectionSort(arr){
+            for(var n=0; n<arr.length-1; n++){
+                var min = arr[n];
+                var idx = n;
+                for(var m=n+1; m<arr.length-1-n; m++){
+                    if(min>arr[m]){
+                        min = arr[m];
+                        idx = m;
+                    }
+                }
+                swap(arr,n,idx);
+                console.log(min)
+                console.log(arr)
+            }
+            return arr;
+        }
+
+        function swap(array,a1,a2){
+            var a = array[a1];
+            array[a1] = array[a2];
+            array[a2] = a;
+            return array;
+        }
+        console.log(array1)
+        console.log(selectionSort(array1));
+            // console.log(swap(array1,5,0));
+        
+
+    </script>
+</body>
+</html>
