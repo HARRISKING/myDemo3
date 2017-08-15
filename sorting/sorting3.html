@@ -8,22 +8,24 @@
 </head>
 <body>
     <script>
-        let array1 = [2,34,2,3,5,256,7,4,23,2,34,213,12,4125,6];
-        function selectionSort(arr){
-            for(let n=0; n<arr.length-1; n++){
-                let min = arr[n];
-                let idx = n;
+        //伪代码：
+        //主体：只需要判断该数字大于前一个数字，就停止调换位置。
 
-                for(let m=n+1; m<arr.length+n; m++){
-                    if(min>arr[m]){
-                        min = arr[m];
-                        idx = m;
+        let array1 = [2,34,2,3,5,256,7,4,23,2,34,213,12,4125,6];
+
+        // let array1 = [2,34,2,3,4125,6];
+
+        function insertionSort(arr){
+            for(let i=1; i<arr.length; i++){
+                for(let j=0; j<i; j++){
+                    if(arr[i]<arr[j]){
+                        swap(arr,i,j);
                     }
                 }
-                swap(arr,n,idx);
             }
             return arr;
         }
+        
         function swap(array,a1,a2){
             var a = array[a1];
             array[a1] = array[a2];
@@ -31,7 +33,7 @@
             return array;
         }
         console.log(array1)
-        console.log(selectionSort(array1));
+        console.log(insertionSort(array1));
     </script>
 </body>
 </html>
