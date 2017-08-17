@@ -1,5 +1,29 @@
-@beautiful-color: red;
 
-.body{
-    color: @beautiful-color;
-}
+// test1:
+    @beautiful-color: blue;
+
+    .a{
+        color: @beautiful-color;
+        margin : 0;
+    }
+
+// mix in:
+    .header{
+        border: 1px solid red;
+        .a;
+    }
+
+    .b{
+        color: red;
+        .c{
+            margin-top: 10px;
+        }
+        .d{
+            margin-bottom: 10px;
+        }
+        &:after{
+            content: ' ';
+            clear: both;
+            display: block;
+        }
+    }
