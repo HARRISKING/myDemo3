@@ -8,18 +8,48 @@
     }
 
 // mix in:
+
+
+
+//例子一:
     .header{
         border: 1px solid red;
         .a;
     }
 
+//例子二：
+
+    .box-radius(@my-radius:5px){
+        border-radius: @my-radius;
+        -webkit-border-radius: @my-radius;
+        -moz-border-radius: @my-radius;
+    }
+
+    #header{
+        .box-radius;
+    }
+    #header1{
+        .box-radius(4px);
+    }
+
+
+//嵌套例子：
     .b{
-        color: red;
+        color: @beautiful-color;
         .c{
             margin-top: 10px;
         }
-        .d{
+        .d >p {
             margin-bottom: 10px;
+            .e{
+                color:@beautiful-color*3;
+                &:before{
+                    color: @beautiful-color;
+                }
+                > li{
+                    display: inline;
+                }
+            }
         }
         &:after{
             content: ' ';
@@ -27,3 +57,7 @@
             display: block;
         }
     }
+
+.f{
+    color:@beautiful-color*3
+}
