@@ -1,0 +1,91 @@
+// $new-color: red;
+
+// .h1{
+//     color: $new-color;
+// }
+
+// $direction: right;
+
+// .h2{
+//     border-#{$direction}:1px solid red;
+// }
+
+// .h3{
+//     // color: #ccc *3;
+//     position: relative;
+//     top: 10px * 3;
+//     left: 30px / 2
+// }
+
+// div {
+//     h1{
+//         color: blue;
+//     }
+//     color : red;
+// }
+
+// div{
+//     border: {
+//         color: red;
+//     }
+// }
+
+// div{
+//     &：hover{
+//         border:1px solid red;
+//     }
+// }
+
+// .h4{
+//     @extend .h2;
+//     margin: 10px;
+// }
+
+// @mixin bigBox($haha:100px) {
+//     width: $haha;
+//     height: $haha;
+//     border: 1px solid #ccc;
+// }
+
+// div{
+//     @include bigBox;
+// }
+// div{
+//     @include bigBox(500px);
+// }
+
+
+// $haha: 1px;
+// .h1{
+//     @if $haha > 80px {
+//         margin: $haha;
+//         border: 1px solid red;
+//     }@else {
+//         color: red;
+//     }
+// }
+
+// @for $i from 20 to 25 {
+//     .border-#{$i}{
+//         border : #{$i}px solid red;
+//     }
+// }
+// $i : 5;
+// @while $i > 0 {
+//     .item-#{$i}{
+//         width: #{i}px;
+//     }
+//     $i : $i - 1;   
+// }
+
+
+
+
+
+@function double($n) {
+    @return $n * 2;
+}
+
+#sidebar {
+　　width: double(5px);
+}
